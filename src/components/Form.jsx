@@ -13,8 +13,16 @@ export const Form = () => {
     defaultValues: {
       email: "",
       password: "",
+      variant: "",
     },
   });
+
+  const selectOptions = [
+    { id: 1, value: "", text: "Выберите один из вариантов..." },
+    { id: 2, value: "One", text: "One" },
+    { id: 3, value: "Two", text: "Two" },
+    { id: 4, value: "Three", text: "Three" },
+  ];
 
   const submitFormHandler = (data) => {
     console.log("data", data);
@@ -90,6 +98,35 @@ export const Form = () => {
         />
         {errors.password && (
           <div className={styles.error}>{errors.password.message}</div>
+        )}
+      </div>
+      <div className={styles.form__row}>
+        <label className={styles.form__label} htmlFor="select">
+          Один из вариантов
+        </label>
+        <select
+          className={clsx(styles.form__select, styles.select)}
+          name=""
+          id="select"
+          {...register("variant", {
+            required: true,
+            validate: (value) => {
+              return value === "Three" && "Выбор опции Three запрещен";
+            },
+          })}
+        >
+          {selectOptions.map((item) => (
+            <option
+              key={item.id}
+              className={styles.select__option}
+              value={item.value}
+            >
+              {item.text}
+            </option>
+          ))}
+        </select>
+        {errors.variant && (
+          <div className={styles.error}>{errors.variant.message}</div>
         )}
       </div>
       <div className={styles.form__row}>
