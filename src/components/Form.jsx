@@ -26,6 +26,7 @@ export const Form = () => {
     <form className={styles.form} onSubmit={handleSubmit(submitFormHandler)}>
       <div className={styles.form__row}>
         <label
+          htmlFor="email"
           className={clsx(styles.form__label, {
             [styles["form__label--error"]]: errors.email,
           })}
@@ -33,6 +34,7 @@ export const Form = () => {
           Электронная почта
         </label>
         <input
+          id="email"
           type="text"
           placeholder="Введите email"
           className={clsx(styles.form__input, {
@@ -40,6 +42,10 @@ export const Form = () => {
           })}
           {...register("email", {
             required: "Поле email не заполнено",
+            pattern: {
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+              message: "Почта должна соответствовать формату asd@asd.asd",
+            },
           })}
         />
         {errors.email && (
@@ -48,6 +54,7 @@ export const Form = () => {
       </div>
       <div className={styles.form__row}>
         <label
+          htmlFor="password"
           className={clsx(styles.form__label, {
             [styles["form__label--error"]]: errors.password,
           })}
@@ -55,14 +62,30 @@ export const Form = () => {
           Пароль
         </label>
         <input
-          type="password"
+          id="password"
+          type="text" // password
           placeholder="Введите пароль"
           className={clsx(styles.form__input, {
             [styles["form__input--error"]]: errors.password,
           })}
           {...register("password", {
             required: "Поле пароль не заполнено",
-            maxLength: { value: 5, message: "Пароль длинее 5 символов" },
+            minLength: { value: 5, message: "Пароль короче 5 символов" },
+            maxLength: { value: 10, message: "Пароль длинее 10 символов" },
+            validate: {
+              containsCapitalLetters: (formValue) => {
+                return (
+                  /[A-Z]/.test(formValue) ||
+                  "Пароль должен содержать хотя бы одну большую букву"
+                );
+              },
+              containsSpecialCharacter: (formValue) => {
+                return (
+                  /[!@#$%^&*]/.test(formValue) ||
+                  "Пароль должен содержать хотя бы один спецсимвол (!@#$%^&*)"
+                );
+              },
+            },
           })}
         />
         {errors.password && (
