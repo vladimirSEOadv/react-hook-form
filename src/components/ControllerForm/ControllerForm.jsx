@@ -14,7 +14,7 @@ export const ControllerForm = () => {
   const onSubmit = (data) => console.log("data", data);
 
   return (
-    <form action="" onSubmit={handleSubmit(onSubmit)}>
+    <form action="" onSubmit={handleSubmit(onSubmit)} style={{ width: "25em" }}>
       <Controller
         name="email"
         control={control}
