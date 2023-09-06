@@ -7,7 +7,7 @@ import { emailValidation } from "./utils/emailValidation";
 export const ControllerForm = () => {
   const { handleSubmit, control } = useForm({
     mode: "onChange",
-    defaultValues: { email: "" },
+    defaultValues: { email: "", password: "" },
     reValidateMode: "onChange",
   });
   const { errors } = useFormState({ control });
