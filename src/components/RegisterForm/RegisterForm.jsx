@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import styles from "./Form.module.css";
 import { clsx } from "clsx";
 
-export const Form = () => {
+export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
@@ -79,7 +79,7 @@ export const Form = () => {
           {...register("password", {
             required: "Поле пароль не заполнено",
             minLength: { value: 5, message: "Пароль короче 5 символов" },
-            maxLength: { value: 10, message: "Пароль длинее 10 символов" },
+            maxLength: { value: 15, message: "Пароль длинее 15 символов" },
             validate: {
               containsCapitalLetters: (formValue) => {
                 return (
