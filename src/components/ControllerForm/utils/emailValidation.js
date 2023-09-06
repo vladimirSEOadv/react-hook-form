@@ -1,5 +1,5 @@
 export const emailValidation = {
-  required: "Обязательное для заполнения",
+  required: "Обязательное поле для заполнения",
   validate: {
     emailValid: (formValue) => {
       if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formValue)) {

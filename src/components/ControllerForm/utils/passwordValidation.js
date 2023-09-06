@@ -1,5 +1,8 @@
+const MINPASSWORDLENGTH = 8;
+const MAXPASSWORDLENGTH = 15;
+
 export const passwordValidation = {
-  required: "Обязательное для заполнения",
+  required: "Обязательное поле для заполнения",
   validate: {
     passwordDoesNotContainCyrillic: (formValue) => {
       return (
@@ -7,11 +10,15 @@ export const passwordValidation = {
       );
     },
     passwordNotTooShort: (formValue) => {
-      return formValue.length > 5 || "Пароль должен быть длинее 5 символов";
+      return (
+        formValue.length > MINPASSWORDLENGTH ||
+        `Пароль должен быть длинее ${MINPASSWORDLENGTH} символов`
+      );
     },
     passwordNotTooLong: (formValue) => {
       return (
-        formValue.length < 15 || "Пароль не должен быть длинее 15 символов"
+        formValue.length < MAXPASSWORDLENGTH ||
+        `Пароль не должен быть длинее ${MAXPASSWORDLENGTH} символов`
       );
     },
     containsCapitalLetters: (formValue) => {

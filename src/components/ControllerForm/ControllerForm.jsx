@@ -19,43 +19,35 @@ export const ControllerForm = () => {
         name="email"
         control={control}
         rules={emailValidation}
-        render={({ field }) => {
-          return (
-            <>
-              <TextField
-                value={field.value}
-                helperText={errors.email?.message}
-                error={!!errors.email?.message}
-                onChange={(e) => field.onChange(e)}
-                label="Email"
-                variant="outlined"
-                margin="normal"
-                fullWidth
-              />
-            </>
-          );
-        }}
+        render={({ field }) => (
+          <TextField
+            value={field.value}
+            helperText={errors.email?.message}
+            error={!!errors.email?.message}
+            onChange={(e) => field.onChange(e)}
+            label="Email"
+            variant="outlined"
+            margin="normal"
+            fullWidth
+          />
+        )}
       />
       <Controller
         name="password"
         control={control}
         rules={passwordValidation}
-        render={({ field }) => {
-          return (
-            <>
-              <TextField
-                value={field.value}
-                helperText={errors.password?.message}
-                error={!!errors.password?.message}
-                onChange={(e) => field.onChange(e)}
-                label="Password"
-                variant="outlined"
-                margin="normal"
-                fullWidth
-              />
-            </>
-          );
-        }}
+        render={({ field }) => (
+          <TextField
+            value={field.value}
+            helperText={errors.password?.message}
+            error={!!errors.password?.message}
+            onChange={(e) => field.onChange(e)}
+            label="Password"
+            variant="outlined"
+            margin="normal"
+            fullWidth
+          />
+        )}
       />
       <Button
         type="submit"
