@@ -1,0 +1,16 @@
+.error {
+    color: #ee4242;
+}
+
+.form__select {
+    padding: 15px;
+    font-size: 16px;
+}
+
+.form__select--error {
+    border: 1px solid red;
+}
+
+.select__option {
+    font-size: inherit;
+}

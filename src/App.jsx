@@ -1,6 +1,6 @@
 import "./App.css";
-import { RegisterForm } from "./components/RegisterForm/RegisterForm";
-import { ControllerForm } from "./components/ControllerForm/ControllerForm";
+import { RegisterForm } from "./Layers/RegisterForm/RegisterForm";
+import { ControllerForm } from "./Layers/ControllerForm/ControllerForm";
 import { useState } from "react";
 import { AbsolyteBtn } from "./components/Buttons/AbsoluteButton";
 

@@ -1,0 +1,9 @@
+.form__btn {
+    font-size: 18px;
+    border: 1px solid #1a1a1a;
+}
+
+.form__btn--valid {
+    border: 1px solid green;
+    background-color: limegreen;
+}

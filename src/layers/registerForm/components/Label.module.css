@@ -1,0 +1,9 @@
+.form__label {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.form__label--error {
+    color: #ee4242;
+}
