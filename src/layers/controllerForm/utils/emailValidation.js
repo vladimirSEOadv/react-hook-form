@@ -1,12 +1,14 @@
-import { doesNotContainSpaces } from "../../../utils/doesNotContainSpaces";
-import { doesNotContainCyrillic } from "../../../utils/doesNotContainCyrillic";
-import { emailValid } from "../../../utils/emailValid";
+import {
+  doesNotContainSpaces,
+  doesNotContainCyrillic,
+} from "../../../utils/universalValidationFunc";
+import { validationForEmail } from "../../../utils/validationForEmail";
 
 export const emailValidation = {
   required: "Обязательное поле для заполнения",
   validate: {
     doesNotContainCyrillic,
     doesNotContainSpaces,
-    emailValid,
+    validationForEmail,
   },
 };
