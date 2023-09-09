@@ -1,8 +1,8 @@
-import "./App.css";
-import { RegisterForm } from "./Layers/RegisterForm/RegisterForm";
-import { ControllerForm } from "./Layers/ControllerForm/ControllerForm";
+import { RegisterForm } from "./layers/registerForm/RegisterForm";
+import { ControllerForm } from "./layers/controllerForm/ControllerForm";
 import { useState } from "react";
-import { AbsolyteBtn } from "./components/Buttons/AbsoluteButton";
+import { AbsolyteBtn } from "./components/buttons/AbsoluteButton";
+import "./App.css";
 
 function App() {
   const [toggleForm, setToggleForm] = useState(true);
