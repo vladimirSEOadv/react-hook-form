@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import styles from "./Form.module.css";
-import { Select } from "./components/Select";
+import { Select } from "./components/select/Select.jsx";
 import { selectOptions } from "./mocks/selectOptions";
-import { Input } from "./components/Input";
+import { Input } from "./components/input/Input.jsx";
 import { registerOptionsForPassword } from "./utils/registerOptionsForPassword";
 import { registerOptionsForEmail } from "./utils/registerOptionsForEmail";
-import { Button } from "./components/Button";
-import { FormRow } from "./components/FormRow";
+import { Button } from "./components/button/Button.jsx";
+import { FormRow } from "./components/formRow/FormRow.jsx";
 
 export const RegisterForm = () => {
   const {
@@ -15,7 +15,7 @@ export const RegisterForm = () => {
     formState: { errors },
     formState,
   } = useForm({
-    mode: "onBlur",
+    mode: "onChange",
     defaultValues: {
       email: "",
       password: "",

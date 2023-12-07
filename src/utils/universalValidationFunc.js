@@ -1,6 +1,6 @@
 export const doesNotContainCyrillic = (str) => {
   if (/[а-яА-Я]/.test(str)) {
-    return "Кирилица не допустима";
+    return "Кириллица не допустима";
   }
   return true;
 };

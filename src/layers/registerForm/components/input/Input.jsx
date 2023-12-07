@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { clsx } from "clsx";
 import styles from "./Input.module.css";
-import { Label } from "./Label";
+import { Label } from "../label/Label.jsx";
 
 export const Input = ({
   errors,

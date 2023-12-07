@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { useId } from "react";
-import { Label } from "./Label";
+import { Label } from "../label/Label.jsx";
 import styles from "./Select.module.css";
 
 export const Select = ({
@@ -28,8 +28,12 @@ export const Select = ({
         {...register(fieldName, {
           required: true,
           validate: (value) => {
-            if (value === "Three") return "Выбор опции Three запрещен";
-            return "";
+            console.log("errors", errors);
+            if (value === "Three") {
+              return "Выбор опции Three запрещен";
+            } else {
+              return "";
+            }
           },
         })}
       >
