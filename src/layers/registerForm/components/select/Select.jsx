@@ -6,12 +6,12 @@ import styles from "./Select.module.css";
 export const Select = ({
   selectOptions,
   register,
+  registerOptions,
   errors,
   fieldName,
   labelText,
 }) => {
   const labelId = useId();
-  console.log("errors", errors);
   return (
     <>
       <Label
@@ -27,14 +27,7 @@ export const Select = ({
         id={`${labelId}-select`}
         {...register(fieldName, {
           required: true,
-          validate: (value) => {
-            console.log("errors", errors);
-            if (value === "Three") {
-              return "Выбор опции Three запрещен";
-            } else {
-              return "";
-            }
-          },
+          ...registerOptions,
         })}
       >
         <option value="" disabled>

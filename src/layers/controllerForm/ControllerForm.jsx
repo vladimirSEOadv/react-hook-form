@@ -12,7 +12,6 @@ export const ControllerForm = () => {
   });
   const { errors } = useFormState({ control });
   const onSubmit = (data) => console.log("data", data);
-  console.log("errors", errors);
   return (
     <form action="" onSubmit={handleSubmit(onSubmit)} style={{ width: "25em" }}>
       <Controller

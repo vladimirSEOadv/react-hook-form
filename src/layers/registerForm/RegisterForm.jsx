@@ -5,6 +5,7 @@ import { selectOptions } from "./mocks/selectOptions";
 import { Input } from "./components/input/Input.jsx";
 import { registerOptionsForPassword } from "./utils/registerOptionsForPassword";
 import { registerOptionsForEmail } from "./utils/registerOptionsForEmail";
+import { registerOptionsForVariants } from "./utils/registerOptionsForVariants.js";
 import { Button } from "./components/button/Button.jsx";
 import { FormRow } from "./components/formRow/FormRow.jsx";
 
@@ -58,6 +59,7 @@ export const RegisterForm = () => {
           fieldName={"variant"}
           labelText={"Один из вариантов"}
           selectOptions={selectOptions}
+          registerOptions={registerOptionsForVariants}
         />
       </FormRow>
       <FormRow>
